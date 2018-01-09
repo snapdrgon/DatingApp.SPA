@@ -1,22 +1,27 @@
+import { AuthService } from './_services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/Http';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { ValueComponent } from './Value/Value.component';
+import { ValueComponent } from './value/value.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ValueComponent
+    ValueComponent,
+    NavComponent
 ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
